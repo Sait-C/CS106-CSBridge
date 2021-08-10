@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d4a5f696-f245-4958-a8b6-dd4153356655" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../slides/Lecture12.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../slides/Lecture12.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../slides/Lecture12.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../slides/Lecture12.pptx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1fz6PDwG1LQrp99xfj1tmxz1guA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Python.whack_a_mole_solution">
+    <configuration name="doodler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Lecture12" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/doodler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="polka_dot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Lecture12" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/polka_dot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="polka_dot_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Lecture12" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/polka_dot_2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="whack_a_mole" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Lecture12" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/whack_a_mole.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="whack_a_mole_solution" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Lecture12" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/whack_a_mole_solution.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.whack_a_mole_solution" />
+        <item itemvalue="Python.whack_a_mole" />
+        <item itemvalue="Python.polka_dot_2" />
+        <item itemvalue="Python.polka_dot" />
+        <item itemvalue="Python.doodler" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4a5f696-f245-4958-a8b6-dd4153356655" name="Default Changelist" comment="" />
+      <created>1597208547254</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597208547254</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1419" height="432" key="GridCell.Tab.0.bottom" timestamp="1628538119807">
+      <screen x="0" y="25" width="1440" height="806" />
+    </state>
+    <state width="1419" height="432" key="GridCell.Tab.0.bottom/0.25.1440.806@0.25.1440.806" timestamp="1628538119807" />
+    <state width="2131" height="432" key="GridCell.Tab.0.bottom/0.25.2560.1323@0.25.2560.1323" timestamp="1628537278098" />
+    <state width="1419" height="432" key="GridCell.Tab.0.center" timestamp="1628538119806">
+      <screen x="0" y="25" width="1440" height="806" />
+    </state>
+    <state width="1419" height="432" key="GridCell.Tab.0.center/0.25.1440.806@0.25.1440.806" timestamp="1628538119806" />
+    <state width="2131" height="432" key="GridCell.Tab.0.center/0.25.2560.1323@0.25.2560.1323" timestamp="1628537278098" />
+    <state width="1419" height="432" key="GridCell.Tab.0.left" timestamp="1628538119806">
+      <screen x="0" y="25" width="1440" height="806" />
+    </state>
+    <state width="1419" height="432" key="GridCell.Tab.0.left/0.25.1440.806@0.25.1440.806" timestamp="1628538119806" />
+    <state width="2131" height="432" key="GridCell.Tab.0.left/0.25.2560.1323@0.25.2560.1323" timestamp="1628537278097" />
+    <state width="1419" height="432" key="GridCell.Tab.0.right" timestamp="1628538119807">
+      <screen x="0" y="25" width="1440" height="806" />
+    </state>
+    <state width="1419" height="432" key="GridCell.Tab.0.right/0.25.1440.806@0.25.1440.806" timestamp="1628538119807" />
+    <state width="2131" height="432" key="GridCell.Tab.0.right/0.25.2560.1323@0.25.2560.1323" timestamp="1628537278098" />
+    <state width="1419" height="432" key="GridCell.Tab.1.bottom" timestamp="1628538119808">
+      <screen x="0" y="25" width="1440" height="806" />
+    </state>
+    <state width="1419" height="432" key="GridCell.Tab.1.bottom/0.25.1440.806@0.25.1440.806" timestamp="1628538119808" />
+    <state width="2131" height="432" key="GridCell.Tab.1.bottom/0.25.2560.1323@0.25.2560.1323" timestamp="1628537279542" />
+    <state width="1419" height="432" key="GridCell.Tab.1.center" timestamp="1628538119807">
+      <screen x="0" y="25" width="1440" height="806" />
+    </state>
+    <state width="1419" height="432" key="GridCell.Tab.1.center/0.25.1440.806@0.25.1440.806" timestamp="1628538119807" />
+    <state width="2131" height="432" key="GridCell.Tab.1.center/0.25.2560.1323@0.25.2560.1323" timestamp="1628537279541" />
+    <state width="1419" height="432" key="GridCell.Tab.1.left" timestamp="1628538119807">
+      <screen x="0" y="25" width="1440" height="806" />
+    </state>
+    <state width="1419" height="432" key="GridCell.Tab.1.left/0.25.1440.806@0.25.1440.806" timestamp="1628538119807" />
+    <state width="2131" height="432" key="GridCell.Tab.1.left/0.25.2560.1323@0.25.2560.1323" timestamp="1628537279540" />
+    <state width="1419" height="432" key="GridCell.Tab.1.right" timestamp="1628538119807">
+      <screen x="0" y="25" width="1440" height="806" />
+    </state>
+    <state width="1419" height="432" key="GridCell.Tab.1.right/0.25.1440.806@0.25.1440.806" timestamp="1628538119807" />
+    <state width="2131" height="432" key="GridCell.Tab.1.right/0.25.2560.1323@0.25.2560.1323" timestamp="1628537279541" />
+  </component>
+</project>
