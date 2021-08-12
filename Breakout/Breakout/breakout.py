@@ -82,6 +82,11 @@ def main():
     canvas.set_canvas_title("Breakout")
     start = False
 
+    create_bricks(canvas, NBRICK_COLUMNS, 2, "RED", 0, BRICK_Y_OFFSET, BRICK_SEP)
+    create_bricks(canvas, NBRICK_COLUMNS, 2, "ORANGE", 0, BRICK_Y_OFFSET + (2 * BRICK_HEIGHT) + (BRICK_SEP*2), BRICK_SEP)
+    create_bricks(canvas, NBRICK_COLUMNS, 2, "YELLOW", 0, BRICK_Y_OFFSET + (4 * BRICK_HEIGHT) + (BRICK_SEP*4), BRICK_SEP)
+    create_bricks(canvas, NBRICK_COLUMNS, 2, "GREEN",0, BRICK_Y_OFFSET + (6 * BRICK_HEIGHT) + (BRICK_SEP*6), BRICK_SEP)
+    create_bricks(canvas, NBRICK_COLUMNS, 2, "BLUE", 0, BRICK_Y_OFFSET + (8 * BRICK_HEIGHT) + (BRICK_SEP*8), BRICK_SEP)
     ball = create_ball(canvas)
     paddle = create_paddle(canvas)
     velocity_x = random.randint(VELOCITY_X_MIN, VELOCITY_X_MAX)
@@ -98,13 +103,26 @@ def main():
             moveBall(canvas, ball, velocity_x, velocity_y)
             direction_x, direction_y = check_bouncy(canvas, ball)
             velocity_x, velocity_y = change_direction(velocity_x, velocity_y, direction_x, direction_y)
+
             colliding_list = check_collision(canvas, ball)
+
             for col in colliding_list:
                 if col is paddle:
                     change_x, change_y = handle_collision_with_paddle(canvas, paddle, ball, velocity_x)
                     velocity_x, velocity_y = change_direction(velocity_x, velocity_y, change_x, change_y)
+                elif col is not ball:
+                    print("brick")
     canvas.mainloop()
 
+# -------------------------------BRICK---------------------------------
+def create_bricks(canvas, columns, rows, color, x0, y0, sep):
+    for i in range(rows):
+        y = (y0 + i * (BRICK_HEIGHT + sep))
+        for j in range(columns):
+            x = x0 + j * (BRICK_WIDTH + sep)
+            rect = canvas.create_rectangle(x, y, x + BRICK_WIDTH, y + BRICK_HEIGHT)
+            canvas.set_fill_color(rect, color)
+            canvas.update()
 
 # -------------------------------BALL---------------------------------
 def handle_collision_with_paddle(canvas, paddle, ball, velocity_x):
@@ -176,8 +194,7 @@ def check_collision(canvas, ball):
     ball_y_1 = coords[1]
     ball_x_2 = coords[2]
     ball_y_2 = coords[3]
-    colliding_list = canvas.find_overlapping(ball_x_1, ball_y_1, ball_x_2, ball_y_2)
-    return colliding_list
+    return canvas.find_overlapping(ball_x_1, ball_y_1, ball_x_2, ball_y_2)
 
 
 # -------------------------------PADDLE---------------------------------
