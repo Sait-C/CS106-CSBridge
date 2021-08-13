@@ -13,6 +13,7 @@ import math
 from graphics import Canvas
 import random
 import time
+from winsound import PlaySound,SND_FILENAME,SND_ASYNC
 
 """
 Dimensions of the canvas, in pixels
@@ -73,7 +74,7 @@ PADDLE_Y_OFFSET = 30
 # Number of turns
 NTURNS = 3
 
-BOUNCE_SOUND = "bounce.au"
+BRICK_SCORE_AMOUNT = 5
 
 get_center_x_of_shape = lambda canvas, shape:  canvas.get_left_x(shape) + (canvas.get_width(shape) / 2)
 
@@ -81,11 +82,14 @@ number_of_turn = NTURNS
 start = False
 game_over = False
 score = 0
+difficulty_counter = 0
 def main():
     global number_of_turn
     global start
     global score
+    global difficulty_counter
 
+    difficulty_counter = 0
     score = 0
     number_of_turn = NTURNS
     canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
@@ -97,6 +101,9 @@ def main():
     create_bricks(canvas, NBRICK_COLUMNS, 2, "YELLOW", 5, BRICK_Y_OFFSET + (4 * BRICK_HEIGHT) + (BRICK_SEP*4), BRICK_SEP, brick_list)
     create_bricks(canvas, NBRICK_COLUMNS, 2, "GREEN",5, BRICK_Y_OFFSET + (6 * BRICK_HEIGHT) + (BRICK_SEP*6), BRICK_SEP, brick_list)
     create_bricks(canvas, NBRICK_COLUMNS, 2, "BLUE", 5, BRICK_Y_OFFSET + (8 * BRICK_HEIGHT) + (BRICK_SEP*8), BRICK_SEP, brick_list)
+
+    score_text = canvas.create_text(50, 20, "Score: 0")
+    canvas.set_font(score_text, "Papyrus", 15)
 
     ball = create_ball(canvas)
     paddle = create_paddle(canvas)
@@ -124,20 +131,52 @@ def main():
                 if col is paddle:
                     change_x, change_y = handle_collision_with_paddle(canvas, paddle, ball, velocity_x)
                     velocity_x, velocity_y = change_direction(velocity_x, velocity_y, change_x, change_y)
-                elif col is not ball:
+                elif col is not ball and col is not score_text:
                     change_x, change_y= handle_collision_with_brick(canvas, col, brick_list)
                     velocity_x, velocity_y = change_direction(velocity_x, velocity_y, change_x, change_y)
+                    update_score(canvas, score_text)
             check_if_finish_brick(canvas, brick_list)
+            velocity_x, velocity_y = check_difficulty(velocity_x, velocity_y)
     canvas.mainloop()
 
 # -------------------------------GAME MANAGER---------------------------------
+def check_difficulty(velocity_x, velocity_y):
+    global difficulty_counter
+    global score
+
+    if score >= 400 and difficulty_counter < 3:
+        difficulty_counter += 1
+        return change_direction(velocity_x, velocity_y, 2, 2)
+    elif score >= 300 and difficulty_counter < 2:
+        difficulty_counter += 1
+        return change_direction(velocity_x, velocity_y, 1.3, 1.3)
+    elif score >= 100 and difficulty_counter < 1:
+        difficulty_counter += 1
+        return change_direction(velocity_x, velocity_y, 1, 1.2)
+    else:
+        return velocity_x, velocity_y
+
+
+def update_score(canvas, score_text):
+    global score
+    canvas.set_text(score_text, f"Score: {score}")
+
+def add_score(amount):
+    global score
+    score += amount
+
+def play_sound(file_path):
+    PlaySound(file_path, SND_FILENAME | SND_ASYNC)
 def check_if_finish_brick(canvas, brick_list):
     if len(brick_list) <= 0:
         game_won(canvas)
 
 def game_won(canvas):
+    global start
+    global game_over
     start = False
     game_over = True
+    play_sound('Stinger_Success_Funky_Pop.wav')
     write_letters(canvas, 30, "YOU WON !")
 
 def damage(canvas, ball):
@@ -158,6 +197,7 @@ def damage(canvas, ball):
 def gameOver(canvas, ball):
     global game_over
     game_over = True
+    play_sound('GameOver.wav')
     write_letters(canvas, 30, "GAME OVER...")
     #canvas.delete(ball)
 
@@ -169,7 +209,7 @@ def write_letters(canvas, size, text):
         temp += text[i]
         canvas.set_text(textObj, temp)
         canvas.update()
-        time.sleep(0.2)
+        time.sleep(0.18)
 
 # -------------------------------BRICK---------------------------------
 def create_bricks(canvas, columns, rows, color, x0, y0, sep, brick_list):
@@ -196,6 +236,8 @@ def handle_collision_with_paddle(canvas, paddle, ball, velocity_x):
     else:
         direction_x = 1
 
+    play_sound('Place Down_synthetic_02.wav')
+
     if current_direction == 1 and direction_x == -1: # if ball goes to right and collide with the paddle's left
         return direction_x, -1 # go reverse direction
     elif current_direction == 1 and direction_x == 1: # if ball goes to right and collide with the paddle's right
@@ -208,6 +250,7 @@ def handle_collision_with_paddle(canvas, paddle, ball, velocity_x):
 def handle_collision_with_brick(canvas, col, brick_list):
     brick_list.remove(col)
     canvas.delete(col)
+    add_score(BRICK_SCORE_AMOUNT)
     return 1, -1
 
 def change_direction(velocity_x, velocity_y, direction_x, direction_y):
