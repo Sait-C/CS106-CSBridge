@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="25338319-1013-47e8-a362-8127607970e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Section13/EducationContent/Lecture13-Breakout.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/Day9PM/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/Day9PM/.idea/Day10.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/Day9PM/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/Day9PM/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/Day9PM/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/Day9PM/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/Day9PM/bounce.au" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/Day9PM/bounce.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/Day9PM/graphics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/Day9PM/phone_book.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/Lecture15.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/__MACOSX/._Day9PM" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/__MACOSX/Day9PM/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/__MACOSX/Day9PM/._bounce.au" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/__MACOSX/Day9PM/._bounce.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Section15/Challenges&amp;Solutions/__MACOSX/Day9PM/._graphics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Breakout/Breakout/bounce.au" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphics.py" beforeDir="false" afterPath="$PROJECT_DIR$/graphics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -38,8 +50,30 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.project">
+  <component name="RunManager" selected="Python.3d_map">
+    <configuration name="3d_map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Day10" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3d_map.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="phone_book" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Day10" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,6 +118,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.3d_map" />
         <item itemvalue="Python.project" />
         <item itemvalue="Python.phone_book" />
       </list>
@@ -102,22 +137,42 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1419" height="233" key="GridCell.Tab.0.bottom" timestamp="1629140720400">
+    <state x="504" y="209" key="FileChooserDialogImpl" timestamp="1629221997528">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="233" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629140720400" />
-    <state width="1419" height="233" key="GridCell.Tab.0.center" timestamp="1629140720400">
+    <state x="504" y="209" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1629221997528" />
+    <state width="1419" height="215" key="GridCell.Tab.0.bottom" timestamp="1629307561109">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="233" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1629140720400" />
-    <state width="1419" height="233" key="GridCell.Tab.0.left" timestamp="1629140720400">
+    <state width="1419" height="215" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629307561109" />
+    <state width="1419" height="215" key="GridCell.Tab.0.center" timestamp="1629307561109">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="233" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1629140720400" />
-    <state width="1419" height="233" key="GridCell.Tab.0.right" timestamp="1629140720400">
+    <state width="1419" height="215" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1629307561109" />
+    <state width="1419" height="215" key="GridCell.Tab.0.left" timestamp="1629307561109">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="233" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1629140720400" />
+    <state width="1419" height="215" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1629307561109" />
+    <state width="1419" height="215" key="GridCell.Tab.0.right" timestamp="1629307561109">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="215" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1629307561109" />
+    <state x="300" y="131" key="SettingsEditor" timestamp="1629221889519">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="300" y="131" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1629221889519" />
   </component>
 </project>

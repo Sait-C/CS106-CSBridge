@@ -5,12 +5,11 @@ import tkinter.font
 """
 File: graphics.py
 Authors: Chris Piech, Lisa Yan and Nick Troccoli
-Version Date: August 19, 2020
+Version Date: August 16, 2021
 
 TODO notes:
 - support window resizing
 - getters for font, outline width, etc.
-- mouse dragged
 - wait for key press
 - rotate images
 - create polygon
@@ -159,6 +158,7 @@ class Canvas(tkinter.Canvas):
         # Optional callbacks the client can specify to be called on each event
         self.on_mouse_pressed = None
         self.on_mouse_released = None
+        self.on_mouse_dragged = None
         self.on_key_pressed = None
         self.on_button_clicked = None
 
@@ -167,6 +167,9 @@ class Canvas(tkinter.Canvas):
 
         # List of presses not handled by a callback
         self.mouse_presses = []
+
+        # List of drags not handled by a callback (when the mouse is moved while held down)
+        self.mouse_drag_events = []
 
         # List of key presses not handled by a callback
         self.key_presses = []
@@ -186,6 +189,7 @@ class Canvas(tkinter.Canvas):
         self.focus_set()
         self.bind("<Button-1>", lambda event: self.__mouse_pressed(event))
         self.bind("<ButtonRelease-1>", lambda event: self.__mouse_released(event))
+        self.bind("<B1-Motion>", lambda event: self.__mouse_dragged(event))
         self.bind("<Key>", lambda event: self.__key_pressed(event))
         self.bind("<Enter>", lambda event: self.__mouse_entered())
         self.bind("<Leave>", lambda event: self.__mouse_exited())
@@ -265,6 +269,18 @@ class Canvas(tkinter.Canvas):
         """
         self.on_mouse_pressed = callback
 
+    def set_on_mouse_dragged(self, callback):
+        """
+        Set the specified function to be called whenever the mouse is dragged (moved while held down).
+        If this function is called multiple times, only the last specified function is called when the mouse is dragged.
+
+        Args:
+            callback: a function to call whenever the mouse is dragged.  Must take in two parameters, which
+                are the x and y coordinates (in that order) of the mouse drag event that just occurred.
+                E.g. func(x, y).  If this parameter is None, no function will be called when the mouse is dragged.
+        """
+        self.on_mouse_dragged = callback
+
     def set_on_mouse_released(self, callback):
         """
         Set the specified function to be called whenever the mouse is released.  If this function is called
@@ -328,6 +344,20 @@ class Canvas(tkinter.Canvas):
         self.mouse_presses = []
         return presses
 
+    def get_new_mouse_drag_events(self):
+        """
+        Returns a list of all mouse drag events that have occurred since the last call to this function or any
+        registered mouse handler.
+
+        Returns:
+            a list of all mouse drag events that have occurred since the last call to this function or any registered
+                mouse handler.  Each mouse drag event contains x and y properties for the drag location, e.g.
+                mouse_drag_events = canvas.get_new_mouse_drag_events(); print(mouse_drag_events[0].x).
+        """
+        mouse_drags = self.mouse_drag_events
+        self.mouse_drag_events = []
+        return mouse_drags
+
     def get_new_key_presses(self):
         """
         Returns a list of all key presses that have occurred since the last call to this function or any registered
@@ -370,6 +400,21 @@ class Canvas(tkinter.Canvas):
             self.on_mouse_pressed(event.x, event.y)
         elif not self.currently_waiting_for_click:
             self.mouse_presses.append(event)
+            
+    def __mouse_dragged(self, event):
+        """
+        Called every time the mouse is dragged. If we have a registered mouse dragged handler, call that.  Otherwise,
+        append the drag to the list of mouse drag events to be handled later.
+
+        Args:
+            event: an object representing the mouse drag event that just occurred.  Assumed to have x and y properties
+                containing the x and y coordinates for this mouse drag event (where the mouse is currently for the
+                drag).
+        """
+        if self.on_mouse_dragged:
+            self.on_mouse_dragged(event.x, event.y)
+        else:
+            self.mouse_drag_events.append(event)
 
     def __mouse_released(self, event):
         """
