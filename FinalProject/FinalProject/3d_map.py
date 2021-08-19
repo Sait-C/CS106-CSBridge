@@ -1,9 +1,8 @@
 from graphics import Canvas
 import math
-import time
 
-CANVAS_WIDTH = 720
-CANVAS_HEIGHT = 640
+CANVAS_WIDTH = 920
+CANVAS_HEIGHT = 840
 
 BRICK_SIZE = 100
 
@@ -51,26 +50,28 @@ def main():
                 created = False
                 playerA += (0.1)
             elif key.keysym == 'd':
-                print("d pressed")
                 created = False
-                canvas.delete_all()
-                canvas.update()
                 playerA -= (0.1)
             elif key.keysym == 'w':
                 created = False
-                canvas.delete_all()
-                canvas.update()
-                playerX += math.sin(playerA) * 5.0
-                playerY += math.cos(playerA) * 5.0
+                playerX += math.sin(playerA) * 2.0
+                playerY += math.cos(playerA) * 2.0
+                if map[int(playerY) * mapWidth + int(playerX)] == '#':
+                    playerX -= math.sin(playerA) * 2.0
+                    playerY -= math.cos(playerA) * 2.0
             elif key.keysym == 's':
                 created = False
-                canvas.delete_all()
-                canvas.update()
-                playerX -= math.sin(playerA) * 5.0
-                playerY -= math.cos(playerA) * 5.0
+                playerX -= math.sin(playerA) * 2.0
+                playerY -= math.cos(playerA) * 2.0
+
+                if map[int(playerY) * mapWidth + int(playerX)] == '#':
+                    playerX += math.sin(playerA) * 2.0
+                    playerY += math.cos(playerA) * 2.0
 
         canvas.update()
         if not created:
+            canvas.delete_all()
+            canvas.update()
             for x in range(0, CANVAS_WIDTH, BRICK_SIZE):
                 # Takes the player angle and tries to find out what's the starting angle for the field of view
                 # and second part of this line is chopping it up into little bits so in this case 120 because that's the width of our screen
@@ -79,6 +80,8 @@ def main():
                 # what is the distance from the player to the wall for that given angle
                 distanceToWall = 0
                 hitWall = False
+                # boundary is it the edge of the cell
+                boundary = False
 
                 eyeX = math.sin(rayAngle) # Unit vector for ray in player space
                 eyeY = math.cos(rayAngle)

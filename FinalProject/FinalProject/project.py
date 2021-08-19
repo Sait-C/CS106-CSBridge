@@ -8,7 +8,7 @@ with a summary of your program!
 from graphics import Canvas
 from winsound import PlaySound,SND_FILENAME,SND_ASYNC
 import time
-import threading
+from map import Map
 
 GUN_SPRITE = "./sprites/Gun.png"
 GUN_WIDTH = 300
@@ -23,10 +23,29 @@ FIRE_RANGE = 500
 DAMAGE_AMOUNT = 10
 FIRE_SOUND = './sounds/fire.wav'
 
+MAP = f"################" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"#              #" \
+          f"################" \
+
 def main():
     canvas = Canvas(1440, 900)
     canvas.set_canvas_title("Final Project")
 
+    map = Map(canvas, MAP, 16, 16, 16, 100)
+    map.generate_map()
     gun = Gun(canvas, GUN_WIDTH, GUN_HEIGHT, 50)
     enemy = Enemy(canvas, ENEMY_WIDTH, ENEMY_HEIGHT, 100)
     player = Player(canvas, gun)
@@ -38,23 +57,28 @@ def main():
             player.shoot()
             enemy.check_for_bullet(player.fire_triangule)
             canvas.update()
-
+        map.generate_map()
+        canvas.update()
+        canvas.raise_to_front(gun.image)
+        canvas.raise_to_front(enemy.image)
+        canvas.update()
     canvas.mainloop()
 
 class Player:
     def __init__(self, canvas, gun):
         self.gun = gun
         self.canvas = canvas
+        self.fire_triangule = None
 
     def shoot(self):
         if self.gun.ammo > 0:
-            z = threading.Thread(target=self.fire_range(FIRE_RANGE), args=(FIRE_RANGE))
-            z.start()
-            y = threading.Thread(target=PlaySound, args=(FIRE_SOUND, SND_FILENAME | SND_ASYNC))
-            y.start()
-            x = threading.Thread(target=self.muzzle_flash())
-            x.start()
+            self.fire_range(FIRE_RANGE)
+            self.muzzle_flash()
+            self.play_sound(FIRE_SOUND)
             self.gun.ammo -= 1
+
+    def play_sound(self, sound):
+       PlaySound(sound, SND_FILENAME | SND_ASYNC)
 
     def muzzle_flash(self):
         muzzle = self.canvas.create_image_with_size(self.canvas.get_canvas_width() / 2 - 100,
@@ -114,6 +138,7 @@ class Gun:
                                       canvas.get_canvas_height() - height, width, height,
                                       GUN_SPRITE)
         canvas.update()
+
     def get_coords(self):
         return self.canvas.coords(self)
 
